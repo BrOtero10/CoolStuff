@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                display: grid;
+                place-items: center;
+                height: 100vh;
+                background-color: #000;
+            }
+            .hold {
+                width: 400px;
+                height: 75px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+            }
+            .line {
+                height: 65px;
+                width: 6px;
+                background: linear-gradient(#ff3b94, #af3dff);
+                border-radius: 5px;
+                transition: all 1s;
+                position: relative;
+                animation: move .75s linear infinite alternate;
+            }
+            @keyframes move {
+                0% {
+                    top: 0;
+                    height: 65px;
+                }
+                100% {
+                    top: 15px;
+                    height: 25px;
+                }
+            }
+            .line {
+                animation: move .75s linear infinite alternate;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="hold">
+            <script>
+                for (let i = 1; i <= 50; i++){
+                    document.write(`<div class="line line${i}""></div>`);
+                }
+                for (let i = 1; i <= 50; i++) {
+                    const line = document.querySelector(`.line${i}`);
+                    line.style.animationDelay = `${0.25 * i}s`;
+                }
+            </script>
+        </div>
+    </body>
+</html>
