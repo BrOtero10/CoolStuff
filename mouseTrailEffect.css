@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fade .5s forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        scale: 0;
+    }
+}
